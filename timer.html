@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    TIMER
+{% endblock %}
+
+{% block main %}
+
+<div id="window">
+<head>
+    <script src="{{ url_for('static', filename='timer.js') }}"></script>
+    <title>STEEP MY TEA</title>
+</head>
+<body>
+    
+	
+<script>
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    var myvar = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        timer--;
+        
+        if(timer < 0){
+            clearInterval(myvar);
+            alert("Tea is done. Enjoy!");
+        }
+    
+        
+    
+    }, 1000);
+    
+    
+ 
+}
+
+
+
+</script>
+
+
+<div id="changeText" ></div>
+    <script type="text/javascript">
+    var text = ["Patience, grasshopper, your tea is steeping!", "Meditate or something", "Don't dump your tea in the Boston Harbor though...", "Ommmmm ommmm", "Now the par(tea) don't start til I walk in..", "I love you a latte", "Can't we all just get oolong", "My puns are tea-riffic", "Sip me baby one more time", "How does Moses make his tea? Hebrews it."];
+    var counter = 0;
+    var elem = document.getElementById("changeText");
+    setInterval(change, 5000);
+    function change() {
+     elem.innerHTML = text[counter];
+        counter++;
+        if(counter >= text.length) { counter = 0; }
+    }
+    </script>
+
+
+
+<div>Your tea will be ready in <span id="time", style="color: green; font-size: 20pt">{{ time }}</span> minutes!</div>
+
+<!--animated gif-->
+<span onMouseOver="document.pic1.src='http://i1187.photobucket.com/albums/z395/Roula_Koukakou/glitters/animated/tea-cup-1.gif'"
+onMouseOut="document.pic1.src='http://i1187.photobucket.com/albums/z395/Roula_Koukakou/glitters/animated/tea-cup-1.gif'">
+<img src="http://i1187.photobucket.com/albums/z395/Roula_Koukakou/glitters/animated/tea-cup-1.gif" height="70" width="150" name="pic1">
+</span>
+
+<div>
+    &nbsp
+    &nbsp
+    &nbsp
+    &nbsp
+</div>
+
+<div>
+    <button onclick="startTimer((parseFloat(document.getElementById('time').innerHTML)*60), document.querySelector('#time'))">Start Timer</button>
+</div>
+</body>
+</div>
+
+{% endblock %}
+
+
+
+
+

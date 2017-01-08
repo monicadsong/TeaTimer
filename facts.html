@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    facts
+{% endblock %}
+
+{% block main %}
+<head style ="font-size: 25pt"><b>Random Fact Generator: Tea Edition</b></head>
+<div>
+        &nbsp
+        &nbsp
+        &nbsp
+        &nbsp
+</div>
+
+    <div><span id="fact" style="color: green; font-size: 15pt"><i>{{facts}}</i></span></div>
+    <div>
+        &nbsp
+        &nbsp
+        &nbsp
+        &nbsp
+    </div>
+     <div>
+        &nbsp
+        &nbsp
+        &nbsp
+        &nbsp
+    </div>
+    <input type="button" value="Generate!" onClick="window.location.reload()">
+    
+</div>
+
+
+
+{% endblock %}

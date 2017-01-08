@@ -1,0 +1,42 @@
+SteepTime: A timer for your tea
+
+This application allows the user to choose her/his tea type, strength, and volume of water. Based on these responses, it will return 
+an appropriate steep time for the tea (based on data stored in a SQL lite database). 
+
+1. The Timer-
+
+Backend: based on user's form response, SQL lite command will be executed and the corresponding time for the tea type, strength, and 
+water volume will be returned. This timer is implemented with JavaScript's setInterval() function, which allows us to 
+update the time remaining every 1000 ms. 
+
+Frontend:to enhance the user experience, we chose to add dynamically changing text to soothe and entertain the user as s/he waits
+for the tea to finish steeping
+
+
+2. Facts-
+
+Backend: The function facts() selects a fact from the table "Facts" on our database by calling a random integer from 1 - max (the number of rows in the facts table) using 
+the randint function. The sql command then returns the fact with the ID of the random integer. 
+
+Frontend: In facts.html, we have a simple button called "Generate" that the user clicks on to reload the page in order to display a 
+new fact.
+
+
+3. Stats-
+
+Backend: The function stats(), which displays data for the entire website, queries a table called "Stats", which records the total of 
+number of cups for each tea type. We modeled the creation of the pie chart after Pset 6 Sentiments, which used plotly to generate
+the data display. We thought this page would be useful for displaying overall statistics for our entire user database, such as the
+most popular type of tea. 
+
+Frontend: We decided to display website stats using a Pie Chart, borrowing from Pset 6 Sentiments for inspiration. Each wedge's 
+color is meant to the be the same color as the tea it represents. 
+
+
+4. Tea Diary-
+Backend: In the function history(), we assign a variable diary_entry using a sql command to select all the rows in the table "diary" 
+that match the user's id. Then we find the total number of cups he/she has consumed by using the function len() to determine 
+the total of objects in the dictionary diary_entry. We also give the user a level or tea-drinking status depending on number of cups he/
+she has consumed. 
+
+Frontend: Hist.html displays the users individual data and displays a gif. 

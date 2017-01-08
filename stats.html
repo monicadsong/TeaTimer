@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stats
+{% endblock %}
+
+{% block main %}
+
+<h2>User-Wide Statistics</h2>
+
+<h3> Total Cups Consumed: {{ total }} </h3>
+
+<h4> White: {{ White_count }}</h4>
+<h4> Black: {{ Black_count }}</h4>
+<h4> Oolong: {{ Oolong_count }}</h4>
+<h4> Green: {{ Green_count }}</h4>
+<h4> Rooibos: {{ Rooibos_count }}</h4>
+<h4> Darjeeling: {{ Darjeeling_count }}</h4>
+<h4> Pu-erh: {{ Puerh_count }}</h4>
+<h4> Herbal: {{ Herbal_count }}</h4>
+
+{{ chart | safe }}
+
+{% endblock %}

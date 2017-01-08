@@ -1,0 +1,43 @@
+SteepTime: A User's Manual
+
+Brief overview: SteepTime is meant for tea aficionados who will use the application frequently. In order to use the
+app, we require all users to register via the register link. 
+
+*Anytime a user wants to go back to the timer page, simply click the white "SteepTime" text in the upper left hand corner*
+
+*Register
+1. Users should register a username and password 
+
+2. After registering, users will subsequently be logged into the website, where they will have access to tea facts 
+and stats to their heart's desire. 
+
+*Login (self-explanatory)
+
+*Logout (self-explanatory)
+
+*SteepTime
+1. Upon logging in, the user will be redirected to the form, where s/he can choose from a list of teas, indicate their preferred strength (strong, medium, weak),
+and indicate the volume of water they are using (1 cup, 1.5 cups, 2 cups)
+
+2. Upon submitting the form, a timer page will be displayed. The user can press the "click me" button to start the timer
+
+3. Upon the start of the timer, cute tea puns, jokes, and clever asides will dynamically display every 5 seconds
+
+4. When the timer has reached zero, a pop up box will appear
+
+
+*Tea Diary
+
+1. Tea diary displays how many times the individual user has consumed tea. 
+
+2. Based on this number, the user is assigned a level (Novice, Q-Tea, Tea-Rex, CelebriTea)
+
+*Stats
+
+1. Stats displays world-wide statistics. In short, it is a summary of tea consumption for all users of the website.
+
+*Facts
+
+1. Facts is a random fact generator that pulls from a repository of rich, little-known tea facts. User simply needs to press
+a button to generate a new fact
+

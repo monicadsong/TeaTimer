@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <title>SteepTime {% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{{ url_for('home') }}"><span class="white">SteepTime</span></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar" style="background:#96ceb4">
+                            <span style="padding-right:3px; padding-top: 3px; display:inline-block;">
+                                <img class="manImg" src="http://cliparts.co/cliparts/8T6/oyE/8T6oyEkRc.png" style="width:100px;height:100px;"></img>
+                            </span>
+                            <span style="padding-right:3px; padding-top: 3px; display:inline-block;">
+                                <img class="manImg" src="http://worldartsme.com/images/cute-tea-cup-clipart-1.jpg" style="width:130px;height:100px;"></img>
+                            </span>
+                            <span style="padding-right:3px; padding-top: 3px; display:inline-block;">
+                                <img class="manImg" src="http://images.clipartpanda.com/fancy-teacup-clip-art-Tea-clip-art-19.png" style="width:100px;height:100px;"></img>
+                            </span>
+                            <ul class="nav navbar-nav navbar-right">
+                                <div class="collapse navbar-collapse" id="navbar">
+                        {% if session.user_id %}
+                            <ul class="nav navbar-nav">
+                                <li><a href="{{ url_for('facts') }}">Facts</a></li>
+                                <li><a href="{{ url_for('history') }}">Tea Diary</a></li>
+                                <li><a href="{{ url_for('stats') }}">Stats</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                            </ul>
+                        {% else %}
+                            <ul class="nav navbar-nav navbar-right" >
+                                <li><a href="{{ url_for('home') }}">Home</a></li>
+                                <li><a href="{{ url_for('register') }}">Register</a></li>
+                                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                            </ul>
+                       
+                    </div>
+
+                            </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+
+            {% if get_flashed_messages() %}
+                <header>
+                    <div class="alert alert-info" role="alert">
+                        {{ get_flashed_messages() | join(" ") }}
+                    </div>
+                </header>
+            {% endif %}
+
+            <main>
+                {% block main %}{% endblock %}
+            </main>
+            
+        </div>
+        
+</nav>
+
+    </body>
+
+</html>

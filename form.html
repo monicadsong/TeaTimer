@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    It's a par(tea)!
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('home') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <head><b>Leaf: </b> </head>
+                <select name="Tea_Type" size="1">
+                        <option value></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Oolong">Oolong</option>
+                        <option value="Green">Green</option>
+                        <option value="Darjeeling">Darjeeling</option>
+                        <option value="Rooibos">Rooibos</option>
+                        <option value="Pu-erh">Pu-erh</option>
+                        <option value="Herbal">Herbal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                  <head><b>Strength: </b></head>
+                    <select name="Strength" size="1">
+                        <option value></option>
+                        <option value="Weak">Weak</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Strong">Strong</option>
+                    </select>
+            </div>
+            <div>
+                <head><b>Cups: </b></head>
+                <select name="Volume_Water" size="1">
+                        <option value></option>
+                        <option value="1">1 Cup</option>
+                        <option value="1.5">1.5 Cups</option>
+                        <option value="2">2 Cups</option>
+                    </select>
+            </div>
+            <div>
+                &nbsp
+                &nbsp
+                &nbsp
+                &nbsp
+                
+            </div>
+            <div>
+                &nbsp
+                &nbsp
+                &nbsp
+                &nbsp
+                
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Calculate!</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
